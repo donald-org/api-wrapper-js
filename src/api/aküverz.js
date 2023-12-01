@@ -29,6 +29,11 @@ class AküVerz {
         return this.#aküs.map(akü => akü.id);
     };
 
+    /**
+     * Gets an Akü from the AküVerz.
+     * @param {string} id The Akü ID.
+     * @returns {Akü} The Akü.
+     */
     get(id) {
         return this.#aküs.find(akü => akü.id === id);
     };
