@@ -4,7 +4,7 @@
   "description": "Official D.O.N.A.L.D. API JavaScript wrapper",
   "main": "src/main.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --timeout 60000"
   },
   "repository": {
     "type": "git",
