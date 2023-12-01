@@ -26,5 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm test
+    - name: NPM dependency installation
+      run: npm install
+    - name: Run tests
+      run: npm test
+      env:
+        USRNAME: ${{ secrets.USRNAME }}
+        PASSWD: ${{ secrets.PASSWD }}
