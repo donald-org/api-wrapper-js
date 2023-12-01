@@ -1,0 +1,21 @@
+{
+  "name": "donald-org",
+  "version": "1.0.0",
+  "description": "Official D.O.N.A.L.D. API JavaScript wrapper",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "@donald-org/api-wrapper-js"
+  },
+  "keywords": [
+    "D.O.N.A.L.D."
+  ],
+  "author": "D.O.N.A.L.D. e.V.",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "axios": "^1.6.2"
+  }
+}
