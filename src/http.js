@@ -7,6 +7,7 @@ class Session {
     #username = '';
     #password = '';
     #cookies = '';
+    #user = null;
 
     /**
      * Creates a new session.
@@ -29,6 +30,14 @@ class Session {
         Object.keys(params).forEach(key => formData.append(key, params[key]));
         const result = (await post('https://www.donald.org/api/mitglieder/login', formData, this)).data;
         if (result.error !== null) throw new Error(`[${result.error.code} ${result.error.message}] ${result.error.reason}`);
+        this.#user = {
+            id: result.id,
+            name: result.name,
+            email: result.email,
+            expires: new Date(result.expires),
+            mifümi: result.properties.mifümi,
+            groups: Object.values(result.groups)
+        };
         return this;
     };
 
@@ -46,6 +55,12 @@ class Session {
     };
 
     set cookies(cookies) {};
+
+    get user() {
+        if (this.#user != null) return this.#user; else throw new Error('User not logged in');
+    };
+
+    set user(user) {};
 };
 
 function get(url, session) {
